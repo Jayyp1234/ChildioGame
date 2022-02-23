@@ -1,7 +1,7 @@
 from email.headerregistry import Address
 from unicodedata import category
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from shopnstuff import db,app
+from childiogame import db,app
 from datetime import datetime
 from flask_login import UserMixin
 
