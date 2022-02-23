@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='logo-icon.png') }}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="preload" href="{{ url_for('static', filename='fonts/OpenSans-Regular.ttf') }}" as='font' crossorigin='anonymous'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title>S&S - {{ title }}</title>
+    {% else %}
+        <title> S&S </title>
+    {% endif %}
+</head>
+<body>
+<nav>
+    <div class="navbar-container">
+        <div class="div">
+    <a href="/"><h4> ShopNStuff</h4></a>
+    
+    
+    <form class="form" style="position: relative;" action="/search">
+  <input type="text" placeholder="Search products & brands" name="">
+  <i class="icon-search" style="position: absolute;top:50%;color:blue;right: 3%;cursor: pointer;"></i>
+    </form>
+        </div>
+        <div class="div phase1" style="padding-top: 4px;">
+        <a href="#"><span> <element>Cart</element><i class="icon-shopping-cart"></i></span></a>
+        <span class="login-but" style="display: block;position: relative;">
+            <span> Login <element> <i class="icon-user"></i></element> </span>
+            <ul style="z-index: 999999999;" class="class-drop">
+                <li> <a href="#" class="drop-links"><i class="icon-user-circle"></i>Your Account </a></li>
+                <li> <a href="#" class="drop-links"><i class='icon-inbox'> </i> Your Orders</a></li>
+                <li> <a href="#" class="drop-links"><i class='icon-heart'> </i> Shortlist</a></li>
+                <li> <a href="#" class="drop-links"><i class='icon-hand-o-right'> </i>SD Cash</a></li><hr>
+                <li>
+                    <a href="/login" style="background-color:#25a8ed;width: 90%; text-align: center;padding: 10px;margin: auto;display:flex;justify-content: center;"> Login</a>
+                </li>
+            </ul>
+            </span> 
+        </div>
+    </div>                        
+    <form class="index-form form" action="search" >
+  <input type="text" placeholder="Search products & brands" name="" style="width: 100%;">
+  <i class="icon-search" style="position: absolute;top:50%;color:blue;right: 3%;cursor: pointer;"></i>
+    </form>
+</nav>
+
+
+
+{% block container %}
+
+{% endblock %}
+
+
+   
+<footer class="container-fluid" style="min-height: 270px;width: 100%;background-color: #16455b;color:white;padding-top: 40px;">
+    <div class="row no-margin" style="padding:10px">
+        <div class="col-sm-6 col-md-3">
+            <div class="footer-body">
+              <img src={logo} />
+              <span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+              <div>
+               <a href="www.instagram.com"> <i class="icon-instagram" ></i> </a>
+               <a href="www.twitter.com"> <i class="icon-twitter" ></i></a>
+               <a href="www.linkeldn.com"> <i class="icon-linkedin" ></i></a>
+               <a href="www.facebook.com">  <i class="icon-facebook" ></i></a>
+              </div> 
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <ul>
+              <li> <b> Company  </b> </li>
+              <li> <a href="#"> Blog</a> </li>
+              <li> <a href="#"> Careers</a> </li>
+              <li> <a href="#"> About Us</a> </li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <ul>
+              <li> <b> Product </b> </li>
+              <li> <a href="#"> Watch Demo</a> </li>
+              <li> <a href="#"> Term of Service</a> </li>
+              <li> <a href="#"> Privacy Policy</a> </li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <ul>
+              <li> <b> Help & Support </b> </li>
+              <li> <a href="#"> Report Bug</a> </li>
+              <li> <a href="#"> Share Feedback</a> </li>
+              <li> <a href="#"> Contact Support</a> </li>
+            </ul>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <ul>
+              <li> <a href="#"> Subscribe to our Newsletter </a> </li>
+              <li> 
+                <form style="position:relative">
+                  <i class="icon-envelope"></i>
+                  <input type="input" placeholder="Enter Email Address"/>
+                  <button>Get Started</button> 
+                </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr style="border-top: 1px solid #435976;"/>
+  <small style="color:#a8aeba;text-align:center;font-size:12;line-height:1.1;display:block;margin:9px;">Copyright © 2022. ShopNStuff All rights reserved | Privacy policy | Refund and Cancellation Policy | Terms of Use | Cookies | Sitemap</small>
+</footer>  
+
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+<script>
+    $('.icon-search').click(function(){
+          $(this).parent('form').submit();
+    });
+</script>
+</html>
