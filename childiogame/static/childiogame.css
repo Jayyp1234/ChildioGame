@@ -1,0 +1,159 @@
+font-face {font-family: Open Sans Regular;src: url(../fonts/OpenSans-Regular.ttf);display:swap;}
+/* Margin and Padding removal*/
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  rgba(106,91,226,255);
+  font-family: 'Arial' !important;
+}
+* {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+h2,h3,h4,h5,h6{
+  text-align: center;
+}
+.header{
+  font-size:20px ;
+}
+.header:hover{
+  background-color: #ffffff;
+  color: rgba(106,91,226,255);
+  padding: 14px 17px;
+  border-radius: 50%;
+}
+.text-center img{
+  margin: 0 auto;
+}
+.text-center{
+  margin-top: 12px;
+}
+.text-center img{
+    width:  400px;
+}
+.questions i, .questions h6{
+  margin: 0 3px;
+}
+.points i, .points h6{
+  margin: 0 3px;
+}
+.points h6, .questions h6{
+  font-weight: bolder;
+  font-family: 'Lucida sans';
+}
+.points i,.questions i{
+  color: #ffffff;
+  font-size: 18px;
+  background-color: rgba(106,91,226,255);
+  padding: 20px 14px;
+  border-radius: 50%;
+}
+.points i{
+  padding: 20px 12px;
+  font-size: 16px;
+}
+.questions h6, .points h6{
+  font-size: 14px;
+}
+.player{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.player .playerImage img{
+  width: 80px ;
+  height: 80px;
+}
+.playerName{
+  display:block;
+  margin-left: 15px;
+}
+.playerName .name, .playerName .post{
+  display: flex;
+}
+.playerName h5{
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 0;
+}
+.playerName h3{
+  color: #777;
+  font-size: 16px;
+  margin: 0;
+}
+.play{
+  margin: 6em 10px 50px 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.play .solo a, .play .withFriends a{
+  border-radius: 18px;
+  padding: 16px 12px;
+  border: 1px solid rgba(106,91,226,255);
+  font-size: 18px;
+  font-family: 'Lucida Sans';
+}
+.play .solo a{
+  padding: 16px 28px;
+  color: rgba(106,91,226,255);
+}
+.play .solo a:hover{
+  background-color:rgba(106,91,226,255);
+  color: #ffffff;
+  transition: 0.3s ease-in-out;
+}
+.play .withFriends a{
+  background-color: rgba(106,91,226,255);
+  color: #ffffff;
+}
+.play .withFriends a:hover{
+  color: rgba(106,91,226,255);
+  background-color:#ffffff;
+  transition: 0.3s ease-in-out;
+}
+@media all and (max-width: 550px){
+  .header{
+    font-size: 14px;
+  }
+  .text-center img{
+    width: 260px;
+  }
+  .play{
+    justify-content: space-around;
+  }
+  .player .playerImage img{
+    width: 50px ;
+    height: 50px;
+  }
+  .play .solo a,.play .withFriends a{
+    font-size: 14px;
+  }
+  .play .solo a{
+    padding: 16px 32px; 
+  }
+  .playerName h5{
+    font-weight: bolder;
+    font-size: 17px;
+    margin: 0;
+  }
+  .playerName h3{
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
