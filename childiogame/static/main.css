@@ -1,13 +1,6 @@
 font-face {font-family: Open Sans Regular;src: url(../fonts/OpenSans-Regular.ttf);display:swap;}
 /* Margin and Padding removal*/
 
-:root{
-  --purple: rgba(106,91,226,255);
-  --white: rgba(255,255,255,255);
-  --lightpurple: rgba(144,136,230,255);
-  --lighterpurple: rgba(144,136,230,255);
-  --dark: #504c64;
-}
 body {
   margin: 0;
   padding: 0;
@@ -42,7 +35,9 @@ h2,h3,h4,h5,h6{
   padding: 15px 0;
   margin: 24px 0 10px 0;
 }
-
+.bofier a i{
+  font-size: 20px;
+}
 .playerSection .card .transparent .players{
   display: flex;
   margin: 18px 0;
@@ -81,7 +76,7 @@ h2,h3,h4,h5,h6{
   align-items: baseline;
   margin-top: 25px;
 }
-.invitation .codeLink .copyCode{
+.invitation .codeLink .copyCode a{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -91,14 +86,14 @@ h2,h3,h4,h5,h6{
   padding: 16px 20px;
 }
 .invitation .codeLink .copyCode i{
-  margin: 0 10px;
+  margin: 0 6px;
   font-size: 20px;
 }
 .invitation .codeLink .copyCode h4{
   font-size: 16px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bolder;
-  margin: 0 18px;
+  margin: 0 14px;
 }
 .invitation .share .icon-share2{
   font-size: 20px;
@@ -107,6 +102,12 @@ h2,h3,h4,h5,h6{
   border-radius: 14px;
   margin-top: 5px;
   color: rgba(106,91,226,255);
+}
+.invitation .share .icon-share2:hover{
+  background-color: rgba(106,91,226,255);
+  color: #ffffff;
+  border: 1.9px solid rgba(106,91,226,255);
+  transition: 0.3s ease-in-out;
 }
 
 
@@ -122,6 +123,8 @@ h2,h3,h4,h5,h6{
     width: 50px;
     height: 50px;
   }
-  
+  .invitation .codeLink .copyCode i{
+    font-size: 16px;
+  }
 }
 
