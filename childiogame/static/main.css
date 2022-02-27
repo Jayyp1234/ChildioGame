@@ -32,7 +32,6 @@ h2,h3,h4,h5,h6{
   border-radius:50%;
 }
 .transparent{
-  padding: 15px 0;
   margin: 24px 0 10px 0;
 }
 .bofier a i{
@@ -113,7 +112,7 @@ h2,h3,h4,h5,h6{
 
 @media all and (max-width: 550px){
   .playerSection{
-    margin-top: 100px;
+    margin-top: 40px;
   }
   .transparent{
     padding: 7px 0;
@@ -127,4 +126,10 @@ h2,h3,h4,h5,h6{
     font-size: 16px;
   }
 }
-
+small {
+  white-space: nowrap;
+  margin-top: 10px;
+  font-weight: 600;
+  color: white;
+  font-family: system-ui;
+}

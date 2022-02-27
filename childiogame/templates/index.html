@@ -11,27 +11,28 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='childiogame.css') }}">
 
-    <!-- {% if title %} -->
-        <title>S&S - {{ title }}</title>
-    <!-- {% else %} -->
-        <title> Childiogame </title>
-    <!-- {% endif %} --> 
+    {% if title %}
+        <title> Kildiogame - {{ title }}</title>
+     {% else %}]
+        <title> Kildiogame </title>
+    {% endif %} 
 <body>
     <div class="container">
-        <div class="row text-center justify-content-center col-12 col-md-10" style="height: auto; margin: 0 auto; background-color: rgba(106,91,226,255);">
-            <div class="container mt-5 " style=" display: flex; 
-            justify-content: start;  text-align: center;color: #ffffff;">
-                <a href="" style="text-decoration: none;"><i class="icon-long-arrow-left header" style="padding-left: 10px ; top:12px; "></i></a>
+        <div class="row text-center justify-content-center " style="height: auto; margin: 0 auto; background-color: rgba(106,91,226,255);">
+            <div style=" display: flex;justify-content: start;  text-align: center;color: #ffffff;margin-top: 15px;">
+                <a href="" style="text-decoration: none;"><i class="icon-long-arrow-left header" style="padding-left: 10px ;color: #ffffff !important; top:12px; background-color: transparent !important;"></i></a>
             </div>
             <div class="text-center">
                 <img src="{{ url_for('static', filename='images/children-games.jpg') }}" class="rounded" alt="...">
             </div>
-            <div class="gameCenter" style="border-radius: 22px; background-color: #ffffff; height: auto; margin: 15px 0 30px 0;">
-                <div class="games text-muted d-flex mt-3">
-                    <h5 style="font-size: 16px; margin: 3px 0 7px 7px; letter-spacing: 0; color: #777; font-weight: bolder;">GAMES</h5>
+            <div class="gameCenter" style="border-radius: 20px; background-color: #ffffff; height: auto; margin: 15px 0 30px 0;">
+                <div class="games text-muted d-flex">
+                    <h5 style="font-size: 14px; margin: 10px;margin-top: 15px; letter-spacing: 0; color: #777; font-weight: bolder;">GAMES</h5>
                 </div>
                 <div class="team d-flex">
-                    <h3 style="color: #000; font-weight: bolder; font-family: 'Lucida Sans';margin: 10px 0 10px 7px;">Football Team Quiz</h3>
+                    <h3 style="font-weight: 900;
+                    margin-left: 10px;
+                    font-size: revert;">I CALL ON</h3>
                 </div>
                 <div class= "question" style="display:flex; border-radius: 22px; background-color: rgba(144,136,230,0.3);padding: 14px 16px; justify-content: space-around;margin-top: 10px;">
                     <div class="questions d-flex align-items-center justify-content-between">
@@ -44,16 +45,19 @@
                         <h6> +100 points</h6>
                     </div>
                 </div>
-                <div class="description" style="margin-top: 24px;">
-                    <h5 style="font-size: 16px; margin: 3px 0 12px 7px; color: #777; font-weight: bolder; display: flex;">DESCRIPTION</h5>
-                    <p style="display: flex; text-align:left; color: #000; font-weight: bolder; font-family: 'Arial'; padding-left: 5px;">Any time is a good time for a quiz and even better if that happens to be a football themed quiz!</p>
+                <div class="description" style="margin-top: 20px;">
+                    <h5 style="font-size: 13px; margin: 3px 0 12px 7px; color: #777; display: flex;">DESCRIPTION</h5>
+                    <p class="text">
+                        This is an indoor game that requires each player to write the letters of the alphabet on a notebook, 
+                        then proceed to write names of people, places, animals, fruits and things that begins with any letter that is called on. 
+                        The player with the highest results wins.</p>
                     <div class="player">
                         <div class="playerImage">
                             <img src="{{ url_for('static', filename='images/male-avatar.jpg') }}" class="rounded" alt="...">
                         </div>
                         <div class="playerName">
                            <div class="name">
-                                <h5>John Paul</h5>
+                                <h5>Okeke Johnpaul</h5>
                            </div>
                            <div class="post">
                                 <h3>Creator</h3>
@@ -62,11 +66,8 @@
                         </div>
                     </div>
                     <div class="play">
-                        <div class="solo">
-                            <a href="" style="text-decoration: none;">Play Solo</a>
-                        </div>
                         <div class="withFriends">
-                            <a href="" style="text-decoration: none;">Play with Friends</a>
+                            <a href="{{url_for('host_name')}}" style="text-decoration: none;">Play with Friends</a>
                         </div>
                     </div>
 

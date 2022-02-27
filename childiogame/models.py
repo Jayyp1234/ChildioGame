@@ -34,21 +34,18 @@ class Category(db.Model):
     __tablename__ = 'category'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), unique=True, nullable=False)
-    image_ref = db.Column(db.String(100),unique=False,nullable=True)
+
+    def __repr__(self):
+        return f"Categories('{self.id}', '{self.title}')"
+        
+class Play(db.Model):
+    __tablename__ = 'play'
+    id = db.Column(db.Integer, primary_key=True)
+    play_id = db.Column(db.String(120), unique=True, nullable=False)
+    player_host = db.Column(db.String(120), unique=False, nullable=False)
     subcategories = db.relationship('SubCategory', backref='category')
 
     def __repr__(self):
-        return f"Categories('{self.id}', '{self.title}','{self.image_ref}')"
-
-
-class SubCategory(db.Model):
-    __tablename__ = 'subcategory'
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120), unique=True, nullable=False)
-    image_ref = db.Column(db.String(100),unique=False,nullable=True)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
-    items = db.relationship('Item', backref='subcategory')
-    def __repr__(self):
-        return f"Sub_Category('{self.id}', '{self.title}','{self.category_id}')"
+        return f"Categories('{self.id}', '{self.title}')"
 
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='logo-icon.png') }}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="preload" href="{{ url_for('static', filename='fonts/OpenSans-Regular.ttf') }}" as='font' crossorigin='anonymous'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title> Kildiogame - {{ title }}</title>
+     {% else %}]
+        <title> Kildiogame </title>
+    {% endif %}  
+<body>
+    <style>
+        .list-group-item{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            margin-bottom: 8px;
+        }
+        .list-group-item small{
+            font-size: 100%;
+            margin-top: 0;
+            display: grid;
+        }
+        
+        
+
+        .list-group-item small span:last-child{
+            font-size: 12px;
+            font-weight: 200;
+            color: aliceblue;
+            text-align: start;
+        }
+        
+        .list-group-item img{
+            margin-left: 10px;
+            margin-right: 20px;
+        }.list-group-numbered>li::before {
+    color: white;
+    font-weight: 600;
+}
+    </style>
+  <input type="text" style="display: none;" value="{{url_path}}" id="myInput"/>
+  
+     <div class="container">
+      <div class="row text-center justify-content-around" style="height: auto;">
+          <div class="header mt-5">
+              <div class="bofier" style="width: 100%;position: relative;text-align: center;color: #ffffff;">
+                    <a href="{{url_for('host_name')}}" style="text-decoration: none; color: #ffffff;"><i class="icon-long-arrow-left" style="position:absolute;left:10px ;top:12px; "></i></a>
+                    <h4 class="fw-bolder" style="letter-spacing: .3px; font-stretch: expanded;">Waiting Room</h4>
+              </div>
+          </div>
+          
+          <div class="playerSection col-12 col-md-10">
+            <div class="">
+                <div class="container-fluid card" style="background-color: rgba(144,136,230,255); position: relative; min-height: 400px;">
+                    <div class="transparent" >
+                          <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">
+                                <div style="border-radius: 50%;display: inline-flex;align-items: baseline;">
+                                    <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" style="width: 40px;height: 40px;" alt="Your avatar">
+                                  </div>
+                                  <small>
+                                      <span>Okeke Johnpaul</span> 
+                                      <span class="role">Host</span>
+                                  </small>
+                            </li>
+                            <li class="list-group-item">
+                                <div style="border-radius: 50%;display: inline-flex;align-items: baseline;">
+                                    <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" style="width: 40px;height: 40px;" alt="Your avatar">
+                                  </div>
+                                  <small>
+                                      <span>Okeke Johnpaul</span> 
+                                      <span class="role">Player</span>
+                                  </small>
+                            </li>
+                            
+                          </ol>
+                          <div class="d-flex justify-content-center">
+                            <div class="spinner-border text-light" role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                          </div>
+                          <div class="invitation text-center justify-content-center align-items-center" style="background-color: white ; position: absolute;bottom: 0; left: 0; height: auto; width: 100%;">
+                            <div class="codeLink">
+                              <div class="copyCode">
+                                <a href="/row_call" onclick="myFunction()" style="text-decoration:none;">
+                                  <h4>Start Game</h4>
+                                </a>
+                            </div>
+                                
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+      </div>
+  </div>
+  </div>
+
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+<script>
+
+</script>
+</html>

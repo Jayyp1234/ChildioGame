@@ -11,32 +11,38 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
-    <!-- {% if title %} -->
-        <title>S&S - {{ title }}</title>
-    <!-- {% else %} -->
-        <title> S&S </title>
-    <!-- {% endif %} --> 
+    {% if title %}
+        <title> Kildiogame - {{ title }}</title>
+     {% else %}]
+        <title> Kildiogame </title>
+    {% endif %}  
 <body>
+  <input type="text" style="display: none;" value="{{url_path}}" id="myInput"/>
+  
      <div class="container">
       <div class="row text-center justify-content-around" style="height: auto;">
           <div class="header mt-5">
               <div class="bofier" style="width: 100%;position: relative;text-align: center;color: #ffffff;">
-                    <a href="" style="text-decoration: none; color: #ffffff;"><i class="icon-long-arrow-left" style="position:absolute;left:10px ;top:12px; "></i></a>
+                    <a href="{{url_for('host_name')}}" style="text-decoration: none; color: #ffffff;"><i class="icon-long-arrow-left" style="position:absolute;left:10px ;top:12px; "></i></a>
                     <h4 class="fw-bolder" style="letter-spacing: .3px; font-stretch: expanded;">Invite Friends</h4>
               </div>
           </div>
           
           <div class="playerSection col-12 col-md-10">
-            <div class="container">
-                <div class="container card" style="background-color: rgba(144,136,230,255); position: relative; height: 350px;">
+            <div class="">
+                <div class="container card" style="background-color: rgba(144,136,230,255); position: relative; height: 400px;">
                     <div class="transparent" >
                           <div class="players justify-content-sm-between justify-content-lg-evenly" style=" display: flex; align-items: center;">
-                              <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" alt="Your avatar">
+                            <div style="border-radius: 50%;display: grid;">
+                              <img style="margin: auto;" src="{{ url_for('static', filename='images/male-avatar.jpg') }}" alt="Your avatar">
+                              <small>{{name}}</small>
+                            </div>
                             <div>
                               <h4 class="fs-3 fs-md-1 fw-sm-bolder pt-3 fw-md-bolder" style="font-weight: bolder; font-size: 30px; color: #ffffff; background-color: rgb(216, 226, 243, 0.1);border-radius: 50%; padding: 20px; text-align: center; align-items: center; margin-bottom: 10px;">VS</h4>
                             </div>
-                            <div style="border-radius: 50%;">
+                            <div style="border-radius: 50%;display: grid;">
                               <img  src="{{ url_for('static', filename='images/group2-avatar.jpg') }}" alt="Your avatar">
+                              <small>Group</small>
                             </div>
                             
                           </div>
@@ -45,12 +51,17 @@
                             <div>
                                 <h5>Invite friends and get bonus points for every new player!</h5>
                             </div>
-                            <div class="code mx-3 mx-md-5">Q2JK46R</div>
+                            <div class="code mx-3 mx-md-5">{{url_path}}</div>
                             <div class="codeLink">
+                              <div class="copyCode">
+                                <a href="/waiting_room/{{url_path1}}" onclick="myFunction()" style="text-decoration:none;">
+                                  <h4>Go to Waiting Room</h4>
+                                </a>
+                            </div>
                                 <div class="copyCode">
-                                    <a href="" style="text-decoration:none;">
-                                      <i class=" icon-content_copy"></i>
-                                      <h4>Copy Code</h4>
+                                    <a href="#" onclick="myFunction()" style="text-decoration:none;">
+                                      <h4><i class=" icon-content_copy"></i></h4>
+                                      
                                     </a>
                                 </div>
                               <div class="share">
@@ -67,19 +78,16 @@
   </div>
   </div>
 
-<!-- {% block container %} -->
-
-
-<!-- {% endblock %} -->
-
-
-   
-
 </body>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
 <script>
-    
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); 
+      navigator.clipboard.writeText(copyText.value);
+    }
 </script>
 </html>

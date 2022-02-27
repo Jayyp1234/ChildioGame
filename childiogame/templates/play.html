@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='logo-icon.png') }}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="preload" href="{{ url_for('static', filename='fonts/OpenSans-Regular.ttf') }}" as='font' crossorigin='anonymous'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title> Kildiogame - {{ title }}</title>
+     {% else %}]
+        <title> Kildiogame </title>
+    {% endif %}  
+<body>
+    <style>
+        .glow {
+        font-size: 95px;
+        margin-top: 25px;
+        color: #fff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+        }
+        @-webkit-keyframes glow {
+            from {text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #b800e6;
+            }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #a525ac, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        }
+        .invitation .code{
+            margin-top: 3px;
+            background-color: white;
+        }.former-control{
+            margin-bottom: 15px;
+        }.invitation label{
+            display: block;
+            color: white;
+            font-size: 14px;
+            text-align: left;
+        }.invitation {
+            padding-right: 0;
+        }.code{
+            padding:0;
+        }
+    </style>
+  <input type="text" style="display: none;" value="{{url_path}}" id="myInput"/>
+  
+     <div class="container">
+      <div class="row text-center justify-content-around" style="height: auto;">
+          <div class="header mt-5">
+              <div class="bofier" style="width: 100%;position: relative;text-align: center;color: #ffffff;">
+                    <a href="{{url_for('host_name')}}" style="text-decoration: none; color: #ffffff;"><i class="icon-long-arrow-left" style="position:absolute;left:10px ;top:12px; "></i></a>
+                    <h4 class="fw-bolder" style="letter-spacing: .3px; font-stretch: expanded;">I Call On </h4>
+              </div>
+          </div>
+          
+          <div class="playerSection col-12 col-md-10">
+            <div>
+                <div class="container-fluid card" style="background-color: rgba(144,136,230,255); display: flex; align-items: center; height: 170px;">
+                    <h1 class="glow">A</h1>
+                </div>
+            </div>
+                <div class="invitation" style="width: 100%;">
+                    <form action="#" method="POST" style="margin-right: 0;" class="row">
+                        <div class="former-control col-sm-6">
+                            <label>Name Of Name</label>
+                            <input type="text" name="name" class="code" style="width: 100%;"/>
+                        </div>
+                        <div class="former-control col-sm-6">
+                            <label>Name Of Place</label>
+                            <input type="text" name="name" class="code" style="width: 100%;"/>
+                        </div>
+                        <div class="former-control col-sm-6">
+                            <label>Name Of Cars </label>
+                            <input type="text" name="name" class="code" style="width: 100%;"/>
+                        </div>
+                        <div class="former-control col-sm-6">
+                            <label>Name Of Animals</label>
+                            <input type="text" name="name" class="code" style="width: 100%;"/>
+                        </div>
+                        <br>
+                        <div class="former-control col-sm-12 d-grid gap-2" style="margin-top: 20px;">
+                            <button class="btn btn-light" type="button" style="    border-radius: 20px;
+                            height: 48px;
+                            background-color: #9088e6;
+                            border-color: #6a5be2;
+                            color: white;
+                            font-weight: 600;
+                            font-family: system-ui"> Submit </button>
+                        </div>
+                        
+                    </form>
+                    
+                  </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+<script>
+
+</script>
+</html>
