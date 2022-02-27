@@ -44,6 +44,7 @@ h2,h3,h4,h5,h6{
 }
 .container .card{
   border-radius: 20px;
+  height: 400px;
 }
 .invitation{
   border-top-left-radius: 0;
@@ -72,7 +73,7 @@ h2,h3,h4,h5,h6{
 .invitation .codeLink{
   display: flex;
   justify-content: space-around;
-  align-items: baseline;
+  align-items:baseline;
   margin-top: 25px;
 }
 .invitation .codeLink .copyCode a{
@@ -83,6 +84,11 @@ h2,h3,h4,h5,h6{
   color: #ffffff;
   border-radius: 16px;
   padding: 16px 20px;
+  border: 1px solid rgba(106,91,226,255) ;
+}
+.invitation .codeLink .copyCode a:hover{
+  background-color: #ffffff;
+  color: rgba(106,91,226,255);
 }
 .invitation .codeLink .copyCode i{
   margin: 0 6px;
@@ -94,11 +100,11 @@ h2,h3,h4,h5,h6{
   font-weight: bolder;
   margin: 0 14px;
 }
+
 .invitation .share .icon-share2{
   font-size: 20px;
   border: 1.9px solid #d8e2f3;
-  padding: 14px;
-  border-radius: 14px;
+  padding:12px 16px 14px 16px;  border-radius: 14px;
   margin-top: 5px;
   color: rgba(106,91,226,255);
 }
@@ -110,7 +116,15 @@ h2,h3,h4,h5,h6{
 }
 
 
-@media all and (max-width: 550px){
+@media all and (max-width:550px){
+  .bofier h4{
+    font-size: 15px;
+    padding-top: 3px;
+    padding-left: 10px;
+  }
+  .container .card{
+    height: 420px;
+  }
   .playerSection{
     margin-top: 40px;
   }
@@ -125,6 +139,26 @@ h2,h3,h4,h5,h6{
   .invitation .codeLink .copyCode i{
     font-size: 16px;
   }
+  .invitation .codeLink{
+    justify-content: space-evenly;
+  }
+  .invitation .codeLink .copyCode a{
+    justify-content: space-evenly;
+    padding: 16px 0px;
+  }
+  .invitation .codeLink .copyCode a h4{
+    font-size: 10px;
+  }
+  .invitation .copyCode .icon-content_copy{
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+  .invitation .share .icon-share2{
+    padding:10px 16px 16px 16px;
+    font-size: 18px;
+
+  }
+  
 }
 small {
   white-space: nowrap;

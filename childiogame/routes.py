@@ -13,7 +13,7 @@ def home():
     return render_template('index.html',
         title='I CALL ON'
     )
-@app.route("/host_game" ,methods=['POST','GET'])
+@app.route("/host_game",methods=['POST','GET'])
 def host_name():
     # GENERATING RANDOM CHARACTERS
     id = list(''.join((random.choice(string.ascii_uppercase) for x in range(15))) +''.join((random.choice(string.digits) for x in range(15))))
