@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ url_for('static', filename='logo-icon.png') }}" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" >
+    <link rel="preload" href="{{ url_for('static', filename='fonts/OpenSans-Regular.ttf') }}" as='font' crossorigin='anonymous'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    {% if title %}
+        <title> Kildiogame - {{ title }}</title>
+     {% else %}]
+        <title> Kildiogame </title>
+    {% endif %}  
+<body>
+     <div class="container">
+      <div class="row text-center justify-content-around" style="height: auto;">
+          <div class="header mt-5">
+              <div class="bofier" style="width: 100%;position: relative;text-align: center;color: #ffffff;">
+                    <h4 class="fw-bolder" style="font-family: 'Lucida Sans';">Player Name: Enter Your Name </h4>
+              </div>
+          </div>
+          
+          <div class="playerSection col-12 col-md-10">
+            <div class="">
+                <div class="container card" style="background-color: rgba(144,136,230,255); position: relative; height: 320px;">
+                    <div class="transparent" >
+                          <div class="players justify-content-center" style=" display: flex; align-items: center;">
+                              <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" alt="Your avatar" style="width: 65px !important;height: 65px !important;">
+                          </div>
+                          
+                          <div class="invitation text-center justify-content-center align-items-center" style="background-color: white ; position: absolute;bottom: 0; left: 0; height: auto; width: 100%;">
+                            <form action="#" method="POST" style="width: 100%;" class="form">
+                                <input type="hidden" name="id" value="{{code}}"/>
+                                <input type="text" name="name" class="code mx-3 mx-md-5" style="width: 80%;"/>
+                            </form>
+                            <div class="codeLink">
+                                <div class="copyCode">
+                                    <a href="#" class="copier" style="text-decoration:none;">
+                                      <h4> Join Game </h4>
+                                    </a>
+                                </div>
+                              
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+          </div>
+      </div>
+  </div>
+  </div>
+
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
+<script>
+    $('.copier').click(function(e){
+        e.preventDefault();
+        $('.form').submit()
+    })
+</script>
+</html>

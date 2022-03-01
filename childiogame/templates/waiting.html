@@ -51,7 +51,7 @@
 }
     </style>
   <input type="text" style="display: none;" value="{{url_path}}" id="myInput"/>
-  
+   <span class="data">{{i}}</span>
      <div class="container">
       <div class="row text-center justify-content-around" style="height: auto;">
           <div class="header mt-5">
@@ -66,24 +66,8 @@
                 <div class="container-fluid card" style="background-color: rgba(144,136,230,255); position: relative; min-height: 400px;">
                     <div class="transparent" >
                           <ol class="list-group list-group-numbered">
-                            <li class="list-group-item">
-                                <div style="border-radius: 50%;display: inline-flex;align-items: baseline;">
-                                    <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" style="width: 40px;height: 40px;" alt="Your avatar">
-                                  </div>
-                                  <small>
-                                      <span>Okeke Johnpaul</span> 
-                                      <span class="role">Host</span>
-                                  </small>
-                            </li>
-                            <li class="list-group-item">
-                                <div style="border-radius: 50%;display: inline-flex;align-items: baseline;">
-                                    <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" style="width: 40px;height: 40px;" alt="Your avatar">
-                                  </div>
-                                  <small>
-                                      <span>Okeke Johnpaul</span> 
-                                      <span class="role">Player</span>
-                                  </small>
-                            </li>
+                            
+                            
                             
                           </ol>
                           <div class="d-flex justify-content-center">
@@ -114,7 +98,35 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" ></script>
-<script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script type="text/javascript" charset="utf-8">
+    function fetchdata(){
+ $.ajax({
+  url: window.location.href,
+  type: 'POST',
+  data: 5,
+  success: function(response){
+    var data1 = '';
+    Object.values(response).forEach(element => {
+      data1 += `
+    <li class="list-group-item">
+      <div style="border-radius: 50%;display: inline-flex;align-items: baseline;">
+        <img  src="{{ url_for('static', filename='images/male-avatar.jpg') }}" style="width: 40px;height: 40px;" alt="Your avatar">
+          </div>
+            <small><span>`+element+`</span> 
+                  <span class="role">Host</span>
+        </small>
+     </li>`
+      $('.list-group-numbered').html(data1)
+    });
+   
+  }
+ });
+}
 
+$(document).ready(function(){
+ setInterval(fetchdata,1000);
+});
 </script>
 </html>

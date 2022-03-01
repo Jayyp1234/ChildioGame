@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 from flask_moment import Moment
 from flask_mail import Mail
+from flask_socketio import SocketIO
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -17,6 +18,5 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 moment = Moment(app)
-
-
+socket = SocketIO(app, async_mode=None)
 from childiogame import routes

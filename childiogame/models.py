@@ -1,4 +1,3 @@
-from email.headerregistry import Address
 from unicodedata import category
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from childiogame import db,app
@@ -43,9 +42,20 @@ class Play(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     play_id = db.Column(db.String(120), unique=True, nullable=False)
     player_host = db.Column(db.String(120), unique=False, nullable=False)
-    subcategories = db.relationship('SubCategory', backref='category')
+    action = db.Column(db.String(120), unique=False, nullable=True)
+    player = db.relationship('Player', backref='player')
 
     def __repr__(self):
-        return f"Categories('{self.id}', '{self.title}')"
+        return f"Play('{self.id}', '{self.play_id}', '{self.player_host}')"
+    
+class Player(db.Model):
+    __tablename__ = 'player'
+    id = db.Column(db.Integer, primary_key=True)
+    game_id = db.Column(db.String(120), db.ForeignKey('play.play_id'))
+    username =  db.Column(db.String(120), unique=False, nullable=False)
+    score = db.Column(db.Integer, unique=False, nullable=True, default = 0)
+
+    def __repr__(self):
+        return f"Player('{self.id}', '{self.username}', '{self.score}')"
 
 
